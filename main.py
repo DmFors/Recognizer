@@ -1,7 +1,10 @@
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+from unit1 import *
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    FILENAME_INP = "INPUT.TXT"
+    FILENAME_OUT = "OUTPUT.TXT"
+    chain = inp_data(FILENAME_INP)
+    chain_characters = transliteration(chain)
+    chain_lexemes = to_lexemes(chain_characters)
+    result = check_the_formula(chain_lexemes)
+    out_data(FILENAME_OUT, result)
