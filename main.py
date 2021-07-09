@@ -1,4 +1,7 @@
-from unit1 import *
+from io_unit import *
+from lexical_unit import *
+from syntax_unit import *
+from transl_unit import *
 
 if __name__ == '__main__':
     FILENAME_INP = "INPUT.TXT"
