@@ -9,8 +9,13 @@ def inp_data(filename: str):
     :param filename: имя файла, из которого считывается исходная символьная цепочка
     :return: исходная символьная цепочка
     """
-    chain = ""
-    return chain
+    import os
+    if filename in os.listdir(path="."):
+        with open(filename, "r") as f:
+            return f.read()
+    else:
+        print("There is no file with this name!")
+        exit(-1)
 
 
 def out_data(filename: str, result: str):
