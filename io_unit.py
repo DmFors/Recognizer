@@ -11,7 +11,7 @@ def inp_data(filename: str):
     """
     import os
     if filename in os.listdir(path="."):
-        with open(filename, "r") as f:
+        with open(filename, "r", encoding="utf-8") as f:
             return f.read()
     else:
         print("There is no file with this name!")

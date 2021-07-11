@@ -1,1 +1,1 @@
-a0[].
+type arr = array [-1/Min..+1*Max] of Char ;
