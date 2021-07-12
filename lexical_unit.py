@@ -10,11 +10,6 @@ def stop():
     exit(-1)
 
 
-def completed():
-    print("lexical_unit completed!")
-    return chain_lexemes
-
-
 def add_word(char):
     chain_lexemes.append(["", "идент"])
     add_char(char)
@@ -61,12 +56,12 @@ def add_semicolon(char):
 
 def to_lexemes(chain_characters: list):
     """
-    Преобразует цепочку лексем, полученную от транслитератора,
-    в цепочку лексем вида ("символ входного языка", "класс символа входного языка").
-    :param chain_characters:список, каждый элемент которого представляет кортеж
-                            вида ("символ цепочки", "класс символа цепочки ")
-    :return:цепочка лексем: список, каждый элемент которого представляет кортеж
-            вида ("символ входного языка", "класс символа входного языка")
+    Преобразует цепочку лексем, полученную от транслитератора, в цепочку лексем вида
+    ("символ входного языка", "класс символа входного языка").
+    :param chain_characters:список, каждый элемент которого представляет кортеж вида
+            ("символ цепочки", "класс символа цепочки ")
+    :return:цепочка лексем: список, каждый элемент которого представляет кортеж вида
+            ("символ входного языка", "класс символа входного языка")
     """
     global state, chain_lexemes
     for lexeme in chain_characters:
@@ -355,11 +350,4 @@ def to_lexemes(chain_characters: list):
             else:
                 stop()
         elif state == "ТЧКЗПТ":
-            if char_class == "пробел":
-                pass
-            else:
-                stop()
-    if state == "ТЧКЗПТ":
-        completed()
-    else:
-        stop()
+            return chain_lexemes

@@ -17,11 +17,10 @@ def recognize_class(char):
     elif 48 <= code <= 57:
         return "цифра"
     else:
-        try:
+        if char not in symbols.keys():
+            raise KeyError("Invalid character in chain!")
+        else:
             return symbols[char]
-        except KeyError:
-            print("Блок транслитерации: Неверный символ в цепочке!")
-            exit(-2)
 
 
 def transliteration(chain: str):
