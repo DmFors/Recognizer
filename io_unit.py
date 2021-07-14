@@ -14,8 +14,7 @@ def inp_data(filename: str):
         with open(filename, "r", encoding="utf-8") as f:
             return f.read()
     else:
-        print("There is no file with this name!")
-        exit(-1)
+        raise FileNotFoundError("There is no file with this name!")
 
 
 def out_data(filename: str, result: str):
@@ -25,4 +24,10 @@ def out_data(filename: str, result: str):
     :param result: результат работы распознавателя
     :return:
     """
-    pass
+    import os
+    if filename in os.listdir(path="."):
+        with open(filename, "a", encoding="utf-8") as f:
+            return f.write(result + '\n')
+    else:
+        with open(filename, "w", encoding="utf-8") as f:
+            return f.write(result + '\n')

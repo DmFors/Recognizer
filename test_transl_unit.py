@@ -103,3 +103,7 @@ class TransliterationTests(unittest.TestCase):
 
     def test_KeyError(self):
         self.assertRaises(KeyError, transliteration, "%")
+
+
+if __name__ == '__main__':
+    unittest.main()

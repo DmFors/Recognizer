@@ -65,3 +65,7 @@ class LexicalTests(unittest.TestCase):
                                                          ['of', 'идент'],
                                                          ['char', 'идент'],
                                                          [';', 'тчкзпт']])
+
+
+if __name__ == '__main__':
+    unittest.main()

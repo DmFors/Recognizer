@@ -3,7 +3,7 @@
 """
 
 
-def identify(identifier: str):
+def identify_pascal(identifier: str):
     """
     Устанавливает, какому из ключевых слов языка Pascal соответствует заданный идентификатор.
     :param identifier:идентификатор, по которому следует установить соответствие ключевому слову языка Pascal.
@@ -12,5 +12,18 @@ def identify(identifier: str):
     В ином случае, возвращает identifier.
 
     """
-    processed_identifier = ""
-    return processed_identifier
+    keywords = ('and', 'array', 'begin', 'case', 'const', 'div', 'do', 'downto', 'else', 'end', 'file', 'for',
+                'function', 'goto', 'if', 'in', 'label', 'mod', 'nil', 'not', 'of', 'or', 'packed', 'procedure',
+                'program', 'record', 'repeat', 'set', 'then', 'to', 'type', 'until', 'var', 'while', 'with')
+    if identifier in keywords:
+        return True
+    else:
+        return False
+
+
+def identify_stdtype(word: str):
+    stdtype_words = ('boolean', 'byte', 'char', 'integer', 'longint', 'real', 'string', 'word')
+    if word in stdtype_words:
+        return True
+    else:
+        return False

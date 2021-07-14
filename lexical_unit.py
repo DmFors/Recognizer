@@ -1,13 +1,10 @@
 """
 1.3 Лексический блок
 """
+from exeptions import KeywordError, StateError
+
 state = "НАЧ"
 chain_lexemes = []
-
-
-def stop():
-    print(f"Лексический блок: ошибка на состоянии {state}")
-    exit(-1)
 
 
 def add_word(char):
@@ -73,14 +70,14 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО1":
             if char_class == "буква":
                 add_char(char)
             elif char_class == "пробел":
                 state = "ПРОБЕЛ1"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ1":
             if char_class == "буква":
                 add_word(char)
@@ -88,7 +85,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ИМЯ1":
             if char_class == "буква" or char_class == "цифра":
                 add_char(char)
@@ -98,7 +95,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ2"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ2":
             if char_class == "равно":
                 add_equally(char)
@@ -106,7 +103,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "РАВНО":
             if char_class == "буква":
                 add_word(char)
@@ -114,7 +111,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО2":
             if char_class == "буква":
                 add_char(char)
@@ -124,7 +121,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ4"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ4":
             if char_class == "лвскобка":
                 add_leftpar(char)
@@ -132,7 +129,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ЛВСКОБКА":
             if char_class == "цифра":
                 add_integer(char)
@@ -143,7 +140,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ЛВСКОБКА"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ЗНАК1":
             if char_class == "цифра":
                 add_integer(char)
@@ -151,7 +148,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ЦЕЛОЕ1":
             if char_class == "цифра":
                 add_char(char)
@@ -161,7 +158,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ7"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ7":
             if char_class == "буква":
                 add_word(char)
@@ -172,7 +169,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "БИНЗНАК1":
             if char_class == "буква":
                 add_word(char)
@@ -180,14 +177,14 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО3":
             if char_class == "буква":
                 add_char(char)
             elif char_class == "пробел":
                 state = "ПРОБЕЛ8-2"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ8-2":
             if char_class == "буква":
                 add_word(char)
@@ -195,7 +192,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ИМЯ2":
             if char_class == "буква" or char_class == "цифра":
                 add_char(char)
@@ -205,7 +202,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ9"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ9":
             if char_class == "тчк":
                 add_word(char)
@@ -213,7 +210,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ9"
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО4":
             if char_class == "цифра":
                 add_integer(char)
@@ -226,7 +223,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ10"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ10":
             if char_class == "цифра":
                 add_integer(char)
@@ -237,7 +234,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ЗНАК2":
             if char_class == "цифра":
                 add_integer(char)
@@ -245,7 +242,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ЦЕЛОЕ2":
             if char_class == "цифра":
                 add_char(char)
@@ -255,7 +252,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ12"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ12":
             if char_class == "буква":
                 add_word(char)
@@ -266,7 +263,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "БИНЗНАК2":
             if char_class == "буква":
                 add_word(char)
@@ -274,14 +271,14 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "БИНЗНАК2"
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО5":
             if char_class == "буква":
                 add_char(char)
             elif char_class == "пробел":
                 state = "ПРОБЕЛ13-2"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ13-2":
             if char_class == "буква":
                 add_word(char)
@@ -289,7 +286,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ИМЯ3":
             if char_class == "буква":
                 add_char(char)
@@ -299,7 +296,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ14"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ14":
             if char_class == "прскобка":
                 add_rightpar(char)
@@ -307,7 +304,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ14"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРСКОБКА":
             if char_class == "буква":
                 add_word(char)
@@ -315,14 +312,14 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО6":
             if char_class == "буква":
                 add_char(char)
             elif char_class == "пробел":
                 state = "ПРОБЕЛ16"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ16":
             if char_class == "буква":
                 add_word(char)
@@ -330,7 +327,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "КЛСЛОВО7":
             if char_class == "буква":
                 add_char(char)
@@ -340,7 +337,7 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 state = "ПРОБЕЛ17"
             else:
-                stop()
+                raise KeywordError()
         elif state == "ПРОБЕЛ17":
             if char_class == "тчкзпт":
                 add_semicolon(char)
@@ -348,6 +345,13 @@ def to_lexemes(chain_characters: list):
             elif char_class == "пробел":
                 pass
             else:
-                stop()
+                raise KeywordError()
         elif state == "ТЧКЗПТ":
-            return chain_lexemes
+            if char_class == "пробел":
+                pass
+            else:
+                raise KeywordError()
+        else:
+            raise StateError(f"Invalid state of automate ({state})")
+    if state == "ТЧКЗПТ":
+        return chain_lexemes
