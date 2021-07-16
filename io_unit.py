@@ -12,7 +12,7 @@ def inp_data(filename: str):
     import os
     if filename in os.listdir(path="."):
         with open(filename, "r", encoding="utf-8") as f:
-            return f.read()
+            return f.readlines()
     else:
         raise FileNotFoundError("There is no file with this name!")
 

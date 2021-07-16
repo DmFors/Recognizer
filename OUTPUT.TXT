@@ -1,0 +1,51 @@
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+ACCEPT
+---------- end of test results ----------
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+ACCEPT
+---------- end of test results ----------
+---------- start of test results ----------
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+REJECT
+ACCEPT
+---------- end of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------
+---------- start of test results ----------

@@ -1,1 +1,12 @@
-type arr = array [-1/Min..+1*Max] of Char ;
+type arr = -array [-1/Min..+1*Max] of Chir ;
+type arr = array [100 / div Rank ..-1+Top] of Word;
+typo Arr = array [3*Small..2000-Big] of Byte;
+type arr = array [1+Min..1+Max] of Char  ();
+type write = array [-1/Min..+1*Max] of Char ;
+type arr = array [1*00 div Rank ..-1+Top] of Word;
+type Arr = array [3?Small..2000-Big] of Byte;
+arr = array [1+Min..1+Max] of Char;
+type arr = array [-1/Min..+1*Max] of Int ;
+type arr = arra-y [100 div Rank ..-1+Top] of Word;
+type Arr = a,rray [3*Small..2000-Big] of Byte;
+type arr = array [1+Min..1+Max] of Char;

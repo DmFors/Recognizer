@@ -1,6 +1,7 @@
 """
 1.2 Блок транслитерации
 """
+from exeptions import *
 
 
 def recognize_class(char):
@@ -9,6 +10,7 @@ def recognize_class(char):
     :param char: символ
     :return: класс символа
     """
+    print(char)
     symbols = {"=": "равно", "[": "лвскобка", "]": "прскобка", ";": "тчкзпт", "+": "знак", "-": "знак", "*": "бинзнак",
                "/": "бинзнак", ".": "тчк", " ": "пробел"}
     code = ord(char)
@@ -18,7 +20,7 @@ def recognize_class(char):
         return "цифра"
     else:
         if char not in symbols.keys():
-            raise KeyError("Invalid character in chain!")
+            raise TranslError("Invalid character in chain!")
         else:
             return symbols[char]
 
